@@ -11,16 +11,34 @@ const characters = require('./models/characters');
 // End points
 //
 
+app.get('/', (req, res) => {
+  
+  res.send('Hello');
+})
+
 // 1. GET /api/characters
 app.get('/api/characters', (req, res) => {
-
+  
+  res.send(JSON.stringify(characters));
 })
 
 
 
 // 2/ GET /api/characters/:id
-app.get('/api/characters/:Id', (req, res) => {
-  
+app.get('/api/characters/:id', (req, res) => {
+
+  let character = null;
+  if(Array.isArray(characters))
+    character = characters.find(item => {
+    
+      if(req.params.id == item.id) // No need to compare for the types, but the values.
+        return true;
+      else 
+        return false;
+
+    })
+
+  res.send(JSON.stringify(character));
 })
 
 
