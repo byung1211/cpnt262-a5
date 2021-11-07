@@ -1,0 +1,58 @@
+
+/* Common style -  start */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  min-height:100vh;
+  background-color:#DCDCDC;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gothic', Arial, sans-serif;
+}
+p {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+li {
+  font-family: Arial, sans-serif;
+}  
+/* Common style -  end */
+
+header {
+  text-align: center;
+  margin-top: 50px;
+}
+main {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:stretch;
+  margin: 0px 20px;
+  gap: 15px;
+}
+
+figure {
+  border: 2px solid black;
+  margin: 0px;
+}
+figure:hover {
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+figcaption {
+  text-align: center;
+  color:white;
+  height:25px;
+  padding-top: 3px;
+  background-color:grey;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none !important;
+}
