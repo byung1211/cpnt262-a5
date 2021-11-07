@@ -1,45 +1,47 @@
+/**
+ * Author: Byung Uk An
+ * Date: 2021.11.07
+ */
+
 //
 // Import modules
 //
 const config = require('dotenv').config();
 const express = require('express');
 const app = express();
-const characters = require('./models/characters');
 
 
 //
-// End points
+// Set the root directory for static contents
 //
-
-app.get('/', (req, res) => {
-  
-  res.send('Hello');
-})
-
-// 1. GET /api/characters
-app.get('/api/characters', (req, res) => {
-  
-  res.send(JSON.stringify(characters));
-})
+app.use(express.static('public'))
 
 
+//
+// Set routes for the end points
+//
+const api = require('./routes/api.js')
+app.use('/api', api)
 
-// 2/ GET /api/characters/:id
-app.get('/api/characters/:id', (req, res) => {
 
-  let character = null;
-  if(Array.isArray(characters))
-    character = characters.find(item => {
-    
-      if(req.params.id == item.id) // No need to compare for the types, but the values.
-        return true;
-      else 
-        return false;
+//
+// Wrong url handling
+//
+app.use((req, res) => {
 
-    })
+  // Set 404 error code to the response
+  res.status(404)
 
-  res.send(JSON.stringify(character));
-})
+  if (req.url.startsWith('/api')) {
+
+    // Send the JSON error response
+    res.send({error: 'File Not Found'})
+  } else {
+
+    // Redirect to the 404 error page
+    res.redirect('404error.html');
+  }
+});
 
 
 //
