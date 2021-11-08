@@ -4,11 +4,14 @@
  * Date: 2021.11.07
  */
 
+// Load configuration
+ const config = require('dotenv').config();
+
 // Load Mongoose
 const mongoose = require('mongoose');
 
 // Set MongoDB URL
-const uri = "mongodb+srv://byung1211:byung1211@cluster0.yv5wq.mongodb.net/cpnt262-a5?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URL;
 
 
 
