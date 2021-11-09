@@ -8,7 +8,7 @@
 // Connect to the MongoDB
 //
 const mongoose = require('mongoose')
-const MONGODB_URL = process.env.MONGODB_URL
+const MONGODB_URL = "mongodb+srv://byung1211:byung1211@cluster0.yv5wq.mongodb.net/cpnt262-a5?retryWrites=true&w=majority"
 
 const connectDB = async () => {
   
