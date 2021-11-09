@@ -12,4 +12,6 @@
 
 ### Comments
 	
-- Um.... I just have done with your instructions for this assignment. 
+- Um.... 
+- I just have done with your instructions for this assignment, except mongo db url in the code, not heroku config.
+- Sorry, I am lazy to fix it :-)
