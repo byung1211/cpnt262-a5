@@ -6,9 +6,10 @@
 //
 // Import modules
 //
-const config = require('dotenv').config();
-const express = require('express');
-const app = express();
+const config = require('dotenv').config()
+const connectDB = require('./db/connectDB')
+const express = require('express')
+const app = express()
 
 
 //
@@ -20,6 +21,7 @@ app.use(express.static('public'))
 //
 // Set routes for the end points
 //
+
 const api = require('./routes/api.js')
 app.use('/api', api)
 
@@ -43,12 +45,21 @@ app.use((req, res) => {
   }
 });
 
+// Start server
+try {
+  
+  // Make Connection to MongoDB 
+  connectDB().then(() => {
 
-//
-// Run server
-//
-const port = process.env.HTTP_PORT || 3000;
+    // Run Application Server
+    const port = process.env.HTTP_PORT || 3000;
+    
+    app.listen(port, function(){
+      console.log(`Listening on port ${port}`);
+    });
+  });
 
-app.listen(port, function(){
-  console.log(`Listening on port ${port}`);
-});
+}catch(error){
+  Console.log(error.stack);
+}
+

@@ -1,4 +1,24 @@
 {
+  "name": "cpnt262-a5",
+  "version": "1.0.0",
+  "description": "CPNT 262 Assignment 5 - Deployed REST API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byung1211/cpnt262-a5.git"
+  },
+  "keywords": [
+    "assignment"
+  ],
+  "author": "Byung Uk An",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byung1211/cpnt262-a5/issues"
+  },
+  "homepage": "https://github.com/byung1211/cpnt262-a5#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

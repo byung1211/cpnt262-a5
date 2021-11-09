@@ -20,7 +20,7 @@ async function insertData(){
   // Connect to MongoDB
   await mongoose.connect(
     uri,
-    { useUnifiedTopology: true, useNewUrlParser: true },
+    { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(function(){
 
