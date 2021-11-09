@@ -20,13 +20,13 @@ const router = express.Router();
 //
 // Load local data
 //
-const characters = require('../models/characters');
+const characters = require('../model/seeds/characters');
 
 //
 // From Cloud MongoDB
 //
 const mongoose = require('mongoose');
-const Character = require('../db/characterDAO');
+const Character = require('../model/character');
 
 
 

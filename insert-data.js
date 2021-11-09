@@ -5,9 +5,12 @@
  */
 
 // Load configuration
- const config = require('dotenv').config();
+const config = require('dotenv').config();
 
-// Load Mongoose
+// Original data
+const characters = require('./model/seeds/characters');
+
+ // Load Mongoose
 const mongoose = require('mongoose');
 
 // Set MongoDB URL
@@ -42,8 +45,6 @@ async function insertData(){
     const Character = mongoose.model('Character', characterSchema)
 
     // Insert character data to Cloud MongoDB
-    const characters = require('./models/characters.js');
-
     characters.forEach(function(charactor) {
       const characterOne = new Character(charactor);
       saveCharacter(characterOne)
