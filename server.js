@@ -37,7 +37,7 @@ app.use((req, res) => {
   if (req.url.startsWith('/api')) {
 
     // Send the JSON error response
-    res.send({error: 'File Not Found'})
+    res.send({Error: '404 Not Found'})
   } else {
 
     // Redirect to the 404 error page
